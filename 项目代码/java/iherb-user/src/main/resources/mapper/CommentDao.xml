@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iherb.user.dao.CommentDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.iherb.user.entity.CommentEntity" id="commentMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="type" column="type"/>
+        <result property="targetId" column="target_id"/>
+        <result property="content" column="content"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+    <select id="listComments" resultType="com.iherb.user.entity.vo.CommentVo">
+        select c.*, u.nickname, u.avatar from t_comment c left join t_user u on c.user_id=u.id
+        where type=#{type} and target_id=#{id} ORDER BY c.create_time <if test="sort==1">desc</if>, c.id <if test="sort==1">desc</if>
+    </select>
+</mapper>

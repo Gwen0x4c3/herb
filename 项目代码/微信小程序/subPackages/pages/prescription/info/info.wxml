@@ -1,0 +1,23 @@
+<view>
+  <text class="title">{{prescription.name}}</text>
+  <text class="time">上传时间：{{prescription.createTime}}</text>
+  <view style="clear:both;"></view>
+  <view class="text-block">
+    【处方名】{{prescription.name}}
+  </view>
+  <view class="text-block">
+    【来源】{{prescription.source}}
+  </view>
+  <view class="text-block">
+    【配料】{{prescription.ingredient}}
+  </view>
+  <view class="text-block">
+    【功效】{{prescription.name}}
+  </view>
+  <view class="text-block">
+    【主治病症】{{prescription.symptom}}
+  </view>
+  <view class="text-block">
+    【服用方法】{{prescription.method}}
+  </view>
+</view>

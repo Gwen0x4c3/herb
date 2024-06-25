@@ -1,0 +1,49 @@
+<view>
+  <!-- 上方搜索区域 -->
+  <view class="search">
+    <picker class="search-type" model:value="{{searchType}}" range="{{pickerArray}}" bindchange="handlePickerChange">
+      <text>{{pickerArray[searchType]}}</text>
+      <image src="https://img2.baidu.com/it/u=435094382,2456814352&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"/>
+    </picker>
+    <view class="{{'search-keyword' + (hintsVisible ? ' with-hints' : '')}}">
+      <input model:value="{{keyword}}" placeholder="输入搜索关键词" 
+        confirm-type="search"
+        bindconfirm="handleSearchConfirm"
+        bindinput="handleSearchInput"
+        bindblur="handleSearchBlur"
+        bindfocus="handleSearchFocus"/>
+      <icon bindtap="clearKeyword" type='clear'></icon>
+      <view class="search-hints" style="{{'display:' + (hintsVisible ? 'block' : 'none')}}">
+        <text class="search-hint"
+          bindtap="handleHintClick"
+          data-keyword="{{item}}" 
+          wx:for="{{hints}}" 
+        >{{item}}</text>
+      </view>
+    </view>
+    <text style="font-size:26rpx;" bindtap="closeSearchPanel" wx:if="{{searchPanelVisible}}">关闭</text>
+  </view>
+
+  <!-- 搜索历史、热搜 -->
+  <view class="search-panel" wx:if="{{searchPanelVisible}}">
+    <view class="title">热门搜索</view>
+    <view class="search-hotwords flex-row">
+      <block wx:for="{{hotwords}}" wx:key="index">
+        <view class="item color" bindtap="searchBlockTap" data-keyword="{{item}}">{{item}}</view>
+      </block>
+    </view>    
+
+    <view wx:if="{{searchHistory.length > 0}}">
+      <view class="flex-row" style="justify-content:space-between;">
+        <view class="title">搜索历史</view>
+        <view class="clear-history" bindtap="clearHistory">清空历史</view>
+      </view>
+      <view style="clear:both;"></view> 
+      <view class="search-history">
+        <block wx:for="{{searchHistory}}" wx:key="index">
+          <view class="item">{{item}}</view>
+        </block>
+      </view>  
+    </view>
+  </view>
+</view>

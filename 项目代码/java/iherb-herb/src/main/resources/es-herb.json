@@ -1,0 +1,59 @@
+{
+  "mappings": {
+    "properties": {
+      "alias": {
+        "type": "text",
+        "fields": {
+          "pinyin": {
+            "type": "text",
+            "analyzer": "pinyin_analyzer"
+          }
+        },
+        "analyzer": "ik_smart"
+      },
+      "id": {
+        "type": "keyword",
+        "index": false
+      },
+      "image": {
+        "type": "keyword",
+        "index": false
+      },
+      "name": {
+        "type": "text",
+        "fields": {
+          "pinyin": {
+            "type": "text",
+            "analyzer": "pinyin_analyzer"
+          }
+        },
+        "analyzer": "ik_max_word"
+      },
+      "text": {
+        "type": "text",
+        "index": false
+      }
+    }
+  },
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "pinyin_analyzer": {
+          "tokenizer": "my_pinyin"
+        }
+      },
+      "tokenizer": {
+        "my_pinyin": {
+          "type": "pinyin",
+          "keep_separate_first_letter": false,
+          "keep_full_pinyin": true,
+          "keep_original": true,
+          "limit_first_letter_length": 16,
+          "lowercase": true,
+          "ignore_pinyin_offset": false,
+          "remove_duplicated_term": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<view>
+  <text class="title">分析药单</text>
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input model:value="{{keyword}}" placeholder="添加中药" 
+    bindfocus="handleFocus"
+    bindblur="handleBlur"
+    bindinput="handleInput"/>
+    <view class="hint" wx:if="{{hintVisible && hints.length > 0}}">
+      <view class="hint-box" wx:for="{{hints}}" 
+      bindtap="addHerb" data-index="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+
+  <!-- 所有选中的中药 -->
+  <view class="herb-box">
+    <view>选中中药：</view>
+    <view class="select" wx:for="{{list}}">
+      <text>{{item.name}}</text>
+      <text class="cancel" bindtap="removeHerb" data-index="{{index}}">×</text>
+    </view>
+  </view>
+
+  <button type="primary" bindtap="analyze">分析成分</button>
+
+  <view class="result-box" wx:if="{{result.functions}}">
+    <!-- 功效 -->
+    <view class="result-block border-red">
+      <text class="result-header font-red">功效</text>
+      <text>{{result.functions}}</text>
+    </view>
+
+    <!-- 主治 -->
+    <view class="result-block border-blue">
+      <text class="result-header font-blue">主治</text>
+      <text>{{result.symptoms}}</text>
+    </view>
+
+    <!-- 处方 -->
+    <view class="result-block border-green">
+      <text class="result-header font-green">药方</text>
+      <view class="prescription" wx:for="{{result.prescriptions}}">
+        <text>【药方名】{{item.name}}</text>
+        <text>【功效】{{item.functions}}</text>
+        <text>【主治】{{item.symptom}}</text>
+        <text>【配料】{{item.ingredient}}</text>
+        <text>【服法】{{item.method}}</text>
+        <text>【来源】{{item.source}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+

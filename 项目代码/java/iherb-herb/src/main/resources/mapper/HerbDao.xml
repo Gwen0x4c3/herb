@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iherb.herb.dao.HerbDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.iherb.herb.entity.HerbEntity" id="herbMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="alias" column="alias"/>
+        <result property="textId" column="text_id"/>
+        <result property="img" column="img"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <select id="queryPageByFunctionParentId" resultType="com.iherb.herb.entity.vo.HerbFunctionVo">
+        select h.id herbId, f.id functionId, h.name herbName, f.name functionName, h.image image
+        from t_function_herb fh left join t_function f on fh.function_id=f.id
+            left join t_herb h on fh.herb_id=h.id where f.parent_id=#{id}
+    </select>
+
+    <select id="queryPageByFunctionId" resultType="com.iherb.herb.entity.vo.HerbFunctionVo">
+        select h.id herbId, f.id functionId, h.name herbName, f.name functionName, h.image image
+        from t_function_herb fh left join t_function f on fh.function_id=f.id
+            left join t_herb h on fh.herb_id=h.id <if test="id!=null">where f.id=#{id}</if>
+    </select>
+
+    <select id="queryAllWithText" resultType="com.iherb.herb.entity.vo.HerbVo">
+        select h.id, name, alias, t.content text, image from t_herb h join t_text t on h.text_id=t.id
+    </select>
+
+    <select id="listWithFunction" resultType="com.iherb.herb.entity.vo.HerbFunctionVo">
+        select f.id functionId, h.id herbId, h.name herbName, h.image image
+        from t_function f join t_function_herb fh on f.id=fh.function_id join t_herb h on fh.herb_id=h.id
+        <if test="functionId!=null">where f.parent_id=#{functionId}</if>
+    </select>
+
+    <select id="listWithTropism" resultType="com.iherb.herb.entity.vo.HerbTropismVo">
+        select t.id tropismId, t.name tropismName, h.id herbId, h.name herbName, h.image image
+        from t_tropism t join t_tropism_herb th on t.id=th.tropism_id join t_herb h on th.herb_id=h.id
+        <if test="tropismId!=null">where t.id=#{tropismId}</if>
+    </select>
+</mapper>

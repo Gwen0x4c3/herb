@@ -1,0 +1,30 @@
+<!--pages/user/user.wxml-->
+<view>
+  <view class="info">
+    <image class="avatar" src="https://bpic.51yuansu.com/pic2/cover/00/30/02/58106dda077aa_610.jpg"
+      bindtap="getAvatar"/>
+    <text class="nickname">CZ12188</text>
+  </view>
+  <view class="functions">
+    <view class="function">
+      <image class="function-icon" src="https://bpic.51yuansu.com/pic2/cover/00/31/29/5810adfbdbd4c_610.jpg"></image>
+      <text class="function-name">基本信息</text>
+    </view>
+    <view class="function">
+      <image class="function-icon" src="https://bpic.51yuansu.com/pic2/cover/00/31/29/5810adfbdbd4c_610.jpg"></image>
+      <text class="function-name">基本信息</text>
+    </view>
+    <view class="function">
+      <image class="function-icon" src="https://bpic.51yuansu.com/pic2/cover/00/31/29/5810adfbdbd4c_610.jpg"></image>
+      <text class="function-name">基本信息</text>
+    </view>
+    <view class="function">
+      <image class="function-icon" src="https://bpic.51yuansu.com/pic2/cover/00/31/29/5810adfbdbd4c_610.jpg"></image>
+      <text class="function-name">基本信息</text>
+    </view>
+    <view class="function">
+      <image class="function-icon" src="https://bpic.51yuansu.com/pic2/cover/00/31/29/5810adfbdbd4c_610.jpg"></image>
+      <text class="function-name">基本信息</text>
+    </view>
+  </view>
+</view>

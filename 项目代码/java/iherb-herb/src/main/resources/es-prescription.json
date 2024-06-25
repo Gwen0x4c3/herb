@@ -1,0 +1,32 @@
+{
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "long"
+      },
+      "name": {
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "ingredients": {
+        "type": "keyword",
+        "analyzer": "ik_smart"
+      },
+      "ingredient": {
+        "type": "text"
+      },
+      "source": {
+        "type": "text"
+      },
+      "method": {
+        "type": "text"
+      },
+      "functions": {
+        "type": "text"
+      },
+      "symptom": {
+        "type": "text"
+      }
+    }
+  }
+}

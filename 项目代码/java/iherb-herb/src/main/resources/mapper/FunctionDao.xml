@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iherb.herb.dao.FunctionDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.iherb.herb.entity.FunctionEntity" id="functionMap">
+        <result property="id" column="id"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <select id="searchFunctions" resultType="com.iherb.herb.entity.FunctionEntity">
+        select * from herb.t_function
+        where id in
+              (select distinct function_id
+              from herb.t_function_herb
+              where herb_id in
+                <foreach collection="ids" open="(" close=")" separator="," item="herbId">#{herbId}</foreach>
+        )
+    </select>
+</mapper>

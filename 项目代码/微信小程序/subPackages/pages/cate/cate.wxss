@@ -1,0 +1,131 @@
+.nav {
+  height: 40px;
+  color: rgb(80, 80, 80)
+}
+.nav-item {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1rpx solid lightgray;
+}
+.nav-item.active {
+  background-color: rgb(240, 240, 240);
+}
+.nav-item-child {
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+  height: 40px;
+  width: 50vw;
+  background-color: white;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid lightgray;
+}
+.nav-item-child:last-child {
+  left: 50vw
+}
+.nav-item-child.active {
+  background-color: rgb(240, 240, 240);
+  color: orange
+}
+.nav .pull-status {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 12px;
+  height: 6px;
+  pointer-events: none;
+}
+.nav .pull-status.active {
+  transform: rotate(180deg); /*顺时针旋转90°*/
+}
+
+.scroll-view-container {
+  display: flex;
+}
+.left-scroll-view {
+  width: 240rpx;
+  background-color: #F7F7F7;
+}
+.left-scroll-view-item {
+  width: 220rpx;
+  padding: 0 10rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.left-scroll-view-item.active {
+  background-color: #FFFFFF;
+  position: relative;
+}
+.left-scroll-view-item.active::before {
+  content: ' ';
+  display: block;
+  width: 6rpx;
+  height: 60rpx;
+  background-color: #C00000;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.cate-parent-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 30rpx 0;
+}
+swiper {
+  padding: 10px;
+}
+.cate-data-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content!important;
+}
+.cate-data-list .cate-data-block {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cate-data-list .cate-data-block image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.cate-data-list .cate-data-block text {
+  font-size: 12px;
+}
+
+.prescriptions {
+  padding: 10px;
+}
+.prescription-block {
+  position: relative;
+  border-bottom: 1rpx solid black;
+  padding: 20rpx 0;
+}
+.prescription-block:last-of-type {
+  border: none
+}
+.prescription-block text {
+  display: block;
+  margin: 10rpx 0;
+}
+.prescription-block .to-detail {
+  position: absolute;
+  top: 30rpx;
+  right: 6rpx;
+  color: gray
+}
+

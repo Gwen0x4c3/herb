@@ -1,0 +1,30 @@
+<view>
+  <text class="title">识别功能</text>
+  <view class="box">
+    <view class="item" bindtap="openCamera" data-type="0">
+      <image src="/image/rec2.png"></image>
+      <text>识别中药</text>
+    </view>
+    <view class="item" bindtap="openCamera" data-type="1">
+      <image src="/image/rec1.png"></image>
+      <text>分析药单</text>
+    </view>
+    <view class="item" bindtap="openCamera" data-type="2">
+      <image src="/image/rec1.png"></image>
+      <text>图片搜索</text>
+    </view>
+  </view>
+  <view class="info">
+    <text>【功能介绍】</text>
+    <view class="info-block">
+      <icon type="info_circle" color="#09BB07" style="vertical-align: middle;"></icon>
+      <text>识别中药：</text>
+      <text>拍摄上传中药图片，服务器将自动识别所上传图片，并返回数个可能的结果。</text>
+    </view>
+    <view class="info-block">
+      <icon type="info_circle" color="#09BB07" style="vertical-align: middle;"></icon>
+      <text>分析药单：</text>
+      <text>拍摄上传中药处方单照片，服务器将提取处方单中的中药组成，并将识别到的中药名称返回到输入框中，之后您可自行添加或删除中药，并对组成成分进行分析，获取它可能的药效、主治等。</text>
+    </view>
+  </view>
+</view>

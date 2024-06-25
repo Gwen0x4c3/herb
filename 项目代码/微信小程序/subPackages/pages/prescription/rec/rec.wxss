@@ -1,0 +1,116 @@
+.title {
+  display: block;
+  text-align: center;
+  font-size: 45rpx;
+  font-weight: 550;
+}
+
+.search-box {
+  width: 90%;
+  height: 80rpx;
+  margin: 20rpx auto 10rpx;
+  box-sizing: border-box;
+  border-radius: 25rpx;
+  background-color: lightgray;
+  position: relative;
+}
+.search-box input {
+  height: 70rpx;
+  padding: 5rpx 20rpx;
+}
+.hint {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1rpx solid lightgray;
+  background-color: white;
+  z-index: 10;
+}
+.hint-box {
+  height: 70rpx;
+  border-bottom: 1rpx solid gray;
+  font-size: 37rpx;
+  line-height: 70rpx;
+  padding: 0 10rpx;
+}
+.hint-box:last-of-type {
+  border: none;
+}
+.hint-box:active {
+  background-color: lightgray;
+}
+
+.herb-box {
+  width: 90%;
+  min-height: 200rpx;
+  margin: 20rpx auto;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  border: 1rpx solid black;
+  border-radius: 10rpx;
+}
+.select {
+  display: inline-block;
+  margin: 5rpx 10rpx;
+  padding: 5rpx 10rpx 5rpx 20rpx;
+  height: 50rpx;
+  box-sizing: content-box;
+  font-size: 36rpx;
+  background-color: rgb(240, 240, 240);
+  border-radius: 30rpx;
+}
+.cancel {
+  margin-left: 10rpx;
+  font-size: 38rpx;
+}
+
+.result-box {
+  width: 90%;
+  margin: 20rpx auto;
+  font-size: large;
+}
+.result-header {
+  font-size: 35rpx;
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: -25rpx;
+  left: 10rpx;
+}
+.result-block {
+  padding: 25rpx 10rpx;
+  border: 5rpx dashed gray;
+  border-radius: 10rpx;
+  margin: 35rpx 0;
+  position: relative;
+}
+.border-red {
+  border-color: red;
+}
+.border-green {
+  border-color: green;
+}
+.border-blue {
+  border-color: blue;
+}
+.font-red {
+  color: red;
+}
+.font-green {
+  color: green;
+}
+.font-blue {
+  color: blue;
+}
+.prescription {
+  border-bottom: 5rpx dotted green;
+  padding: 12rpx 0 35rpx;
+  font-size: 32rpx;
+}
+.prescription:last-of-type {
+  border: none
+}
+.prescription text {
+  display: block;
+  margin: 10rpx 0;
+}

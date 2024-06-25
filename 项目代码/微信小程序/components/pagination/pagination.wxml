@@ -1,0 +1,16 @@
+<view class="page-control">
+  <view class="page-control-btns">
+    <view class="page-btn {{prevBtnDis?'btn-disabled':''}}" bindtap="prevPage">上一页</view>
+    <view class="page-number" bindtap="shopPagePopup"><text>{{index}}</text>/<text>{{total}}</text></view>    
+    <view class="page-btn {{nextBtnDis?'btn-disabled':''}}" bindtap="nextPage">下一页</view>
+  </view>
+  <view class="page-container" hidden="{{!pageMask}}">
+    <view class="page-mask" bindtap="hidePagePopup"></view>
+    <view class="page-popup">
+      <view class="page-popup-box">
+        <view class="page-line" wx:for="{{total}}" wx:for-index="idx" data-index="{{idx+1}}" bindtap="changePage">第{{item+1}}页</view>
+      </view>
+    </view>
+  </view>
+</view>
+

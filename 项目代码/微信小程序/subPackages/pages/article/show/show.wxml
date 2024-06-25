@@ -1,0 +1,67 @@
+<view>
+  <scroll-view class="scroll" scroll-y="true" bindscrolltolower="handleReachBottom">
+    <view class="main">
+      <view class="title">{{data.title}}</view>
+      <view class="author-block">
+        <image src="{{data.avatar}}"></image>
+        <view style="display: inline-block;">
+          <view class="nickname">{{data.nickname}}</view>
+          <view class="sta">
+            <view class="time">{{data.createTime}}</view>
+            <view class="view">
+              <image src="/image/浏览.png" />
+              <text>{{data.viewCount}}</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <view class="content">
+        <rich-text nodes="{{data.content}}"></rich-text>
+      </view>
+
+    </view>
+
+    <view class="comment-block">
+      <view class="header">
+        <view class="count">共有{{count}}条评论</view>
+        <view class="sort">
+          <view class="{{['sort-select', sort==0?'active':'']}}" bindtap="handleSortChange" data-sort="0">正序</view>
+          <view class="{{['sort-select', sort==1?'active':'']}}" bindtap="handleSortChange" data-sort="1">倒序</view>
+        </view>
+      </view>
+
+      <view class="comments">
+        <block wx:for="{{comments}}">
+          <view class="comment">
+            <image class="avatar" src="{{item.avatar}}"></image>
+            <view class="comment-content">
+              <view class="comment-header">
+                <view class="nickname">{{item.nickname}}</view>
+                <view class="author" wx:if="{{item.userId==data.userId}}">作者</view>
+                <view class="info">
+                  <text class="floor">第{{item.floor}}楼</text>
+                  <text class="time">{{item.timeStr}}</text>
+                </view>
+              </view>
+              <view class="comment-body">
+                {{item.content}}
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="bottom" wx:if="{{page>=totalPage}}">
+        已经到最底了
+      </view>
+    </view>
+  </scroll-view>
+  <view class="{{['edit-block',inputFocus?'focus':'']}}" style="bottom:{{bottom}}px;">
+    <view class="edit-box">
+      <textarea model:value="{{inputValue}}" class="{{['textarea',inputFocus?'focus':'']}}" fixed="true" hold-keyboard="true" placeholder="点击输入文字" show-confirm-bar="false" adjust-position="false" bindfocus="handleFocus" bindblur="handleBlur" bindinput="handleInput" bindkeyboardheightchange="handleKeyboardChange"></textarea>
+      <button class="ready" bindtap="sendComment" style="display:{{inputFocus?'inline-block':'none'}};" disabled="{{inputValue.length>0?false:true}}">发表</button>
+    </view>
+  </view>
+</view>

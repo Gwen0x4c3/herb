@@ -1,0 +1,83 @@
+text {
+  display: block;
+}
+
+/* 功能展示 */
+.function-block {
+  padding: 30rpx 0 50rpx;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.function {
+  
+} 
+.function image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.function text {
+  color: rgb(70, 70, 70);
+  text-align: center;
+  font-size: 28rpx;
+}
+
+/* 文章 */
+.articles {
+  background-color: rgb(244, 243, 244);
+}
+.articles .header {
+  padding: 20rpx calc(3vw) 0;
+  font-size: 34rpx;
+  color: rgb(70, 70, 70)
+}
+.article-block {
+  position: relative;
+  width: 92%;
+  min-height: 100rpx;
+  margin: 16rpx auto;
+  padding: 10rpx calc(2vw) 70rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.article-block .title {
+  font-size: 40rpx;
+  margin-bottom: 20rpx;
+}
+.article-block image {
+  width: 100%;
+  height: 250rpx;
+}
+.article-block .footer {
+  position: absolute;
+  bottom: 10rpx;
+  height: 50rpx;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+}
+.article-block .footer .time {
+  color: rgb(100, 100, 100)
+}
+.article-block .footer .view {
+  /* margin-right: 50rpx; */
+}
+.article-block .footer .view image {
+  width: 38rpx;
+  height: 24rpx;
+  display: inline-block;
+}
+.article-block .footer .view text {
+  display: inline-block;
+}
+
+/* 药方 */
+.prescriptions {
+
+}
+
+/* 中药 */
+.herbs {
+
+}

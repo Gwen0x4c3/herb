@@ -1,0 +1,25 @@
+page {
+  padding-bottom: 300rpx;
+}
+.title {
+  display: block;
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: 550;
+}
+.time {
+  float: right;
+  margin: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: gray
+}
+image {
+  width: 80%;
+  height: 380rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+.text-block {
+  width: 96%;
+  margin: 10rpx auto;
+}

@@ -1,0 +1,39 @@
+.title {
+  margin-top: 20rpx;
+  text-align: center;
+  display: block;
+  font-size: 50rpx;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  margin-top: 15rpx;
+}
+.item {
+  margin: 30rpx 30rpx;
+}
+.item image {
+  width: 180rpx;
+  height: 180rpx;
+  display: block;
+}
+.item text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+}
+.info {
+  font-size: 35rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  border: 3rpx dashed gray;
+  border-radius: 16rpx;
+}
+.info-block {
+  margin: 16rpx 10rpx 16rpx 10rpx;
+}
+.info-block text {
+  vertical-align: middle;
+}

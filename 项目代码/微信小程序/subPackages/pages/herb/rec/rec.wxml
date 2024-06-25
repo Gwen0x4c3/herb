@@ -1,0 +1,15 @@
+<view>
+  <text class="title">识别结果</text>
+
+    <!-- 展示中药搜索数据 -->
+    <view class="herb">
+    <view class="result-block" wx:for="{{list}}" bindtap="toInfoPage" data-id="{{item.id}}">
+      <image src="{{item.image}}"/>
+      <view class="text-block">
+        <text>【中药名】{{item.name}}</text>
+        <text>【别名】{{item.alias}}</text>
+      </view>
+      <text class="probability">可信度：{{item.probability}}%</text>
+    </view>
+  </view>
+</view>

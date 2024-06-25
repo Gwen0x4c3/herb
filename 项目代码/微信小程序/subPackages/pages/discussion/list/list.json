@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "editButton": "../../../../components/edit-button/edit-button"
+  }
+}

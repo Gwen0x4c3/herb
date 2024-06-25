@@ -1,0 +1,33 @@
+<view>
+  <searchBar id="searchBar" keyword="{{keyword}}" searchType="{{searchType}}" isIndex="{{false}}" searchPanelVisible="{{searchPanelVisible}}"></searchBar>
+
+  <!-- 展示中药搜索数据 -->
+  <view class="herb" wx:if="{{searchType==0}}" style="{{'display:' + (searchPanelVisible ? 'none' : 'block')}}">
+    <view class="result-block" wx:for="{{list}}" bindtap="toInfoPage" data-id="{{item.id}}">
+      <image src="{{item.image}}"/>
+      <view class="text-block">
+        <text>【中药名】{{item.name}}</text>
+        <text>【别名】{{item.alias}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 展示处方搜索数据 -->
+  <view class="prescription" wx:if="{{searchType==1}}" style="{{'display:' + (searchPanelVisible ? 'none' : 'block')}}">
+    <view class="result-block" wx:for="{{list}}" bindtap="toInfoPage" data-id="{{item.id}}">
+      <navigator url="../../../subPackages/pages/prescription/info/info?id={{item.id}}">
+        <text class="link">{{item.name}}</text>
+      </navigator>
+      
+      <view class="text-block">
+        <text>【来源】{{item.source}}</text>
+        <text>【配料】{{item.ingredient}}</text>
+        <text>【主治】{{item.symptom}}</text>
+      </view>
+    </view>
+  </view>
+
+  <page id="page" currentPage="{{currentPage}}"
+      totalPage="{{totalPage}}"
+      bind:pagingChange="pageChange"></page>
+</view>

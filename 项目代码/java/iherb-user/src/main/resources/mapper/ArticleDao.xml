@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iherb.user.dao.ArticleDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.iherb.user.entity.ArticleEntity" id="articleMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="keywords" column="keywords"/>
+        <result property="userId" column="user_id"/>
+        <result property="viewCount" column="view_count"/>
+        <result property="commentCount" column="comment_count"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <select id="getArticle" resultType="com.iherb.user.entity.vo.ArticleVo">
+        select a.id, title, content, user_id, nickname, avatar, view_count, keywords, a.create_time
+        from t_article a left join t_user u on a.user_id=u.id
+        where a.id=#{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,7 @@
+<view class="edit-button">
+  <image bindtap="expand" src="/image/edit-button{{expand?2:1}}.png"></image>
+  <view class="{{['selection', expand?'expand1':'']}}"
+    bindtap="toEditPage" data-type="0">文章</view>
+  <view class="{{['selection', expand?'expand2':'']}}"
+    bindtap="toEditPage" data-type="1">讨论</view>
+</view>

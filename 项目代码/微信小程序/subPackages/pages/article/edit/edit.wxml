@@ -1,0 +1,9 @@
+<view>
+  <view class="title">
+    <input model:value="{{title}}" type="text" maxlength="30" placeholder="输入完整的标题（5-30个字）"/>
+  </view>
+  <view class="content">
+    <hg-editor id="editor" placeholder="输入正文内容" bind:input="handleInputChange"></hg-editor>
+  </view>
+  <button class="submit" bindtap="submit">发布</button>
+</view>

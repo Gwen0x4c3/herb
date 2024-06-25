@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "hg-editor": "/components/hg-editor/hg-editor"
+  }
+}

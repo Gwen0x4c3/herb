@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="upload-area">
+    <button bindtap="chooseImage">选择图片</button>
+    <image class="uploaded-image" src="{{imageSrc}}"></image>
+  </view>
+  <view class="similar-images">
+    <view class="title">相似图片：</view>
+    <view class="images-list">
+      <view class="image-box" wx:for="{{list}}">
+        <image class="similar-image" src="{{item.url}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.upload-area {
+  /* margin-top: 20px; */
+}
+
+.uploaded-image {
+  width: 140px;
+  height: 140px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.images-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.similar-image {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 5rpx auto 0;
+}
+
+.image-box {
+  width: 300rpx;
+  height: 350rpx;
+  overflow: hidden;
+  margin: 2rpx 10rpx;
+}
+.image-box text {
+  
+}

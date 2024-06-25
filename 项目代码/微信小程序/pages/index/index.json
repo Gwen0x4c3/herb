@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "searchBar": "/components/searchBar/searchBar",
+    "editButton": "/components/edit-button/edit-button"
+  }
+}

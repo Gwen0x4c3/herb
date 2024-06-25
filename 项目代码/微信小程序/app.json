@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/rec/rec"
+  ],
+  "subPackages": [
+    {
+      "root": "subPackages",
+      "name": "分包",
+      "pages": [
+        "pages/herb/list/list",
+        "pages/herb/info/info",
+        "pages/search/search",
+        "pages/prescription/info/info",
+        "pages/prescription/rec/rec",
+        "pages/herb/rec/rec",
+        "pages/cate/cate",
+        "pages/article/show/show",
+        "pages/article/edit/edit",
+        "pages/discussion/list/list",
+        "pages/herb/search/search"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "慧眼识药",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#26abe2",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "image/tab_home.png",
+        "selectedIconPath": "image/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/rec/rec",
+        "text": "拍照",
+        "iconPath": "image/tab_camera.png",
+        "selectedIconPath": "image/tab_camera_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "image/tab_my.png",
+        "selectedIconPath": "image/tab_my_selected.png"
+      }
+    ]
+  }
+}

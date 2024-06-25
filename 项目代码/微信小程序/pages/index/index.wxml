@@ -1,0 +1,42 @@
+<view>
+  <searchBar keyword="" searchType="0" isIndex="true" searchPanelVisible="{{searchPanelVisible}}"></searchBar>
+
+  <view class="function-block">
+    <view class="function" bindtap="navigate" data-target="0">
+      <image src="/image/func_分类.png"></image>
+      <text>中药分类</text>  
+    </view>
+    <view class="function" bindtap="navigate" data-target="1">
+      <image src="/image/func_讨论.png"></image>
+      <text>话题讨论</text>  
+    </view>
+    <view class="function" bindtap="navigate" data-target="2">
+      <image src="/image/func_咨询.png"></image>
+      <text>专家咨询</text>  
+    </view>
+  </view>
+
+  <!-- 页面内容 -->
+  <view class="content" wx:if="{{!searchPanelVisible}}">
+    <!-- 推荐内容 - 文章推荐 -->
+    <view class="articles">
+      <text class="header">文章推荐</text>
+      <block wx:for="{{articles}}">
+        <view class="article-block" bindtap="toArticlePage" data-id="{{item.id}}">
+          <view class="title">{{item.title}}</view>
+          <image wx:if="{{item.cover}}" mode="heightFix" src="{{item.cover}}"></image>
+          <view class="footer">
+            <view class="time">{{item.timeStr}}</view>
+            <view class="view">
+              <image src="/image/浏览.png"></image>
+              <text>{{item.viewCount}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <editButton></editButton>
+
+</view>

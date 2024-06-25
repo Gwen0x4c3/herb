@@ -1,0 +1,21 @@
+
+<view>
+  <view class="discussions">
+  <text class="header">文章推荐</text>
+  <block wx:for="{{discussions}}">
+    <view class="discussion-block" bindtap="toDiscussionPage" data-id="{{item.id}}">
+      <view class="title">{{item.title}}</view>
+      <image wx:if="{{item.cover}}" mode="heightFix" src="{{item.cover}}"></image>
+      <view class="footer">
+        <view class="time">{{item.timeStr}}</view>
+        <view class="view">
+          <image src="/image/浏览.png"></image>
+          <text>{{item.viewCount}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<editButton></editButton>
+</view>

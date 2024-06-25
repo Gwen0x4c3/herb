@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iherb.herb.dao.PrescriptionDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.iherb.herb.entity.PrescriptionEntity" id="prescriptionMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="source" column="source"/>
+        <result property="ingredient" column="ingredient"/>
+        <result property="symptom" column="symptom"/>
+        <result property="function" column="function"/>
+        <result property="method" column="method"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <insert id="save" parameterType="com.iherb.herb.entity.PrescriptionEntity">
+        insert into herb.t_prescription (name, source, ingredient, symptom, function, method, create_time, modify_time)
+        values (#{name}, #{source}, #{ingredient}, #{symptom}, #{function}, #{method}, #{createTime}, #{modifyTime})
+    </insert>
+</mapper>

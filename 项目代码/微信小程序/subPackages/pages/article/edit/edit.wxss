@@ -1,0 +1,20 @@
+.title {
+  border-bottom: 1rpx solid lightgray;
+  height: 50px;
+  box-sizing: border-box;
+}
+.title input {
+  height: 50px;
+  padding: 0 20rpx;
+  font-size: 38rpx;
+}
+
+.content {
+  font-size: 34rpx;
+}
+
+.submit {
+  margin-top: 10px;
+  background-color: rgb(0, 171, 224);
+  color: white;
+}

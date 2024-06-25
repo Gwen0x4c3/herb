@@ -1,0 +1,93 @@
+<view>
+  <view class="nav">
+    <view id="herb" class="{{['nav-item',showIndex<=1?'active':'']}}" bindtap="pulldownChange">
+      中药
+      <image class="{{['pull-status',pullStatus==1?'active':'']}}" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.tukuppt.com%2Fpng_preview%2F00%2F58%2F04%2FG5AnXpPaT8.jpg%21%2Ffw%2F780&refer=http%3A%2F%2Fimg.tukuppt.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1663151794&t=a0e658c440338a0671b0f6cca3f0975a"></image>
+      <block wx:if="{{pullStatus==1}}">
+        <view id="herb-function" class="{{['nav-item-child',showIndex==0?'active':'']}}" bindtap="showIndexChange" data-index="0">
+          按功效分类
+        </view>
+        <view id="herb-tropism" class="{{['nav-item-child',showIndex==1?'active':'']}}" bindtap="showIndexChange" data-index="1">
+          按归经分类
+        </view>
+      </block>
+    </view>
+    <view id="prescription" class="{{['nav-item',showIndex==2?'active':'']}}" bindtap="showIndexChange" data-index="2">处方</view>
+  </view>
+
+  <!-- 展示中药 -->
+  <view class="scroll-view-container" wx:if="{{showIndex!=2}}">
+    <scroll-view class="left-scroll-view" style="{{'height:'+(wh+'px')+';'}}" scroll-y="true">
+      <block wx:for="{{cateList}}" wx:for-item="item" wx:for-index="i" wx:key="i">
+        <block>
+          <view class="{{['left-scroll-view-item',i===cateIndex?'active':'']}}" bindtap="cateIndexChange" data-index="{{i}}">{{item.name}}</view>
+        </block>
+      </block>
+    </scroll-view>
+
+    <!-- 展示列表 -->
+    <scroll-view style="{{'height:'+(wh+'px')+';'}}" scroll-y="true">
+      <!-- 按功效 -->
+      <block wx:if="{{showIndex==0}}">
+        <view id="{{'cate-' + data.id}}" class="cate-parent-name">{{data.name}}</view>
+        <block wx:for="{{data.children}}" wx:for-item="function" wx:for-index="i1">
+          <view class="cate-name">{{function.name}}</view>
+          <swiper indicator-dots="true">
+            <block wx:for="{{function.herbs.length / 6}}" wx:for-index="i2">
+              <swiper-item class="cate-data-list">
+                <block wx:for="{{6}}" wx:for-index="j" wx:if="{{i2*6+j<function.herbs.length}}">
+                  <view class="cate-data-block">
+                    <image src="{{function.herbs[i2*6+j].image}}"></image>
+                    <text>{{function.herbs[i2*6+j].name}}</text>
+                  </view>
+                </block>
+              </swiper-item>
+            </block>
+          </swiper>
+        </block>
+      </block>
+
+      <!-- 按归经 -->
+      <block wx:if="{{showIndex==1}}">
+        <view id="{{'cate-' + data.id}}" class="cate-parent-name">{{data.name}}</view>
+        <view class="cate-data-list">
+          <block wx:for="{{data.herbs}}">
+            <view class="cate-data-block">
+              <image src="{{item.image}}"></image>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
+
+        </view>
+      </block>
+
+    </scroll-view>
+  </view>
+
+  <!-- 展示处方 -->
+
+    <scroll-view style="{{'height:'+(wh+'px')+';'}}" scroll-y="true" bindscrolltolower="listNextPage">
+      <view class="prescriptions" wx:if="{{showIndex == 2}}">
+      <block wx:for="{{list}}">
+        <view class="prescription-block">
+          <view class="to-detail" bindtap="toDetailPage" data-id="{{item.id}}">详情{{'>>'}}</view>
+          <text>【处方名】{{item.name}}</text>
+          <text>【功效】{{item.functions}}</text>
+          <text>【主治】{{item.symptom}}</text>
+          <text>【来源】{{item.source}}</text>
+        </view>
+      </block>
+  </view>
+
+    </scroll-view>
+</view>
+
+<!-- <view>
+  <swiper indicator-dots="true">
+    <swiper-item wx:for="{{test.length / 6}}" wx:for-index="i">
+      <block wx:for="{{6}}" wx:for-index="j" wx:if="{{i * 6 + j < test.length}}">
+        <text>{{test[i * 6 + j]}}</text>
+      </block>
+    </swiper-item>
+  </swiper>
+</view> -->

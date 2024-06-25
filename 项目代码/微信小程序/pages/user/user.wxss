@@ -1,0 +1,43 @@
+text {
+  display: block;
+}
+page {
+  background-color: rgb(250, 250, 250);
+}
+.info {
+  background-color: white;
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+}
+.avatar {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75px;
+  margin: 0 auto;
+}
+.nickname {
+  text-align: center;
+}
+.functions {
+  background-color: white;
+  
+}
+.functions .function {
+  padding: 30rpx 0;
+  border-bottom: 1rpx dashed lightgray;
+}
+.functions .function:last-of-type {
+  border: none
+}
+.functions .function-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 20rpx;
+  vertical-align: middle;
+}
+.functions .function-name {
+  display: inline-block;
+  height: 50rpx;
+  vertical-align: middle;
+}

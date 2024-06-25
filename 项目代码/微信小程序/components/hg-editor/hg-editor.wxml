@@ -1,0 +1,15 @@
+<!--components/hg-editor/hg-editor.wxml-->
+<view class="editor-box">
+  <view class="editor-box-header" wx:if="{{showTabBar}}">
+    <view class="operate-box" data-uploadImageURL="{{uploadImageURL}}" bind:tap="_addImage">
+      <text class="iconfont icon-image"></text>
+    </view>
+    <view class="operate-box" bind:tap="_undo">
+      <text class="iconfont icon-undo"></text>
+    </view>
+  </view>
+  <view class="editor-box-content">
+    <editor class="editor" id="editor" name="{{name}}" placeholder="{{placeholder}}" bind:ready="_onEditorReady"
+      bind:input="_onInputting" show-img-resize="{{true}}"></editor>
+  </view>
+</view>

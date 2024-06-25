@@ -1,0 +1,8 @@
+<view>
+<text class="title">{{herb.name}}</text>
+<text class="time">上传时间：{{herb.createTime}}</text>
+  <image src="{{herb.image}}"></image>
+  <view class="text-block" wx:for="{{herb.paragraphs}}">
+    <text>{{item}}</text>
+  </view>
+</view>

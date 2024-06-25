@@ -1,0 +1,36 @@
+.edit-button {
+  position: fixed;
+  right: 20rpx;
+  bottom: 80rpx;
+}
+.edit-button image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 2rpx 4rpx lightgray;
+  position: relative;
+  z-index: 100;
+}
+.edit-button .selection {
+  position: absolute;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 50%;
+  border: 2rpx solid lightgray;
+  background-color: white;
+  right: 8rpx;
+  top: 8rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(0, 174, 227);
+  transition: .2s;
+}
+.selection.expand1 {
+  right: 110rpx;
+  top: -60rpx;
+}
+.selection.expand2 {
+  right: 110rpx;
+  top: 70rpx;
+}

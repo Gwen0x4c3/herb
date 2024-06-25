@@ -1,0 +1,76 @@
+.content {
+  
+}
+.result-block {
+  width: 90%;
+  height: 200rpx;
+  margin: 20rpx auto;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  /* border: 1rpx solid lightgray; */
+  box-shadow: 3rpx 3rpx 5rpx 5rpx lightgray;
+  transition: .3s;
+  word-break: break-all;
+  display: -webkit-box;       
+  /* 超出部分隐藏 */
+  overflow: hidden;
+  -webkit-box-orient: vertical;  
+  /* 限制最多2行 */
+  -webkit-line-clamp: 6;
+}
+.herb .result-block:hover {
+  box-shadow: 5rpx 7rpx 8rpx 8rpx lightgray;
+}
+.herb .result-block image {
+  width: 240rpx;
+  height: 180rpx;
+  margin: 10rpx;
+  box-sizing: border-box;
+  border: 1rpx solid lightgray;
+  display: inline-block;
+  vertical-align: top;
+}
+.herb .result-block .text-block {
+  display: inline-block;
+  height: 180rpx;
+  margin: 10rpx 0;
+  width: calc(100% - 270rpx);
+  font-size: 35rpx;
+  overflow: hidden;
+}
+.herb .text-block  text {
+  word-break: break-all;
+  display: -webkit-box;      
+  /* 超出部分隐藏 */
+  overflow: hidden;
+  -webkit-box-orient: vertical;  
+  /* 限制最多2行 */ 
+  -webkit-line-clamp: 2;
+}
+
+.prescription .result-block {
+  height: 300rpx;
+  overflow: hidden;
+}
+.prescription .link {
+  text-decoration: underline;
+  color: rgb(25, 25, 166);
+  text-align: center;
+  font-size: 38rpx;
+}
+.prescription .link:active {
+  color: orange
+}
+.prescription .text-block {
+  padding: 10rpx;
+  word-break: break-all;
+  display: -webkit-box;       
+  /* 超出部分隐藏 */
+  overflow: hidden;
+  -webkit-box-orient: vertical;  
+  /* 限制最多2行 */
+  -webkit-line-clamp: 5;
+}
+.prescription .text-block text {
+  margin: 12rpx 0;
+}
