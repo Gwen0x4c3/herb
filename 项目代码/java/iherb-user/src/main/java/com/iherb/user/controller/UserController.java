@@ -18,8 +18,8 @@ import java.util.concurrent.TimeUnit;
 @CrossOrigin
 public class UserController {
 
-    private static final String APP_ID = "wx7de8eec11b611fb7";
-    private static final String APP_SECRET = "7dd9ee2a8f1e360ace131e5962e2d93c";
+    private static final String APP_ID = "xxx";
+    private static final String APP_SECRET = "xxx";
 
     @Autowired
     private RestTemplate restTemplate;
